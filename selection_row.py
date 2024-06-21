@@ -65,3 +65,13 @@ st.dataframe(
     column_config=column_configuration,
     use_container_width=True
 )
+
+activity_df = {}
+for person in people :
+    activity_df[df.iloc[person]["name"]] = df.iloc[person]["activity"]
+daily_activity_df = {}
+for person in people:
+    daily_activity_df[df.iloc[person]["name"]] = df.iloc[person]["daily_activity"]
+daily_activity_df = pd.DataFrame(daily_activity_df)
+st.dataframe(activity_df)
+st.dataframe(daily_activity_df)
